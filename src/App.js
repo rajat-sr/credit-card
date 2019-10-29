@@ -73,7 +73,7 @@ class App extends React.Component {
   render() {
     const { card, name, expiry, cvv } = this.state;
     return (
-      <div>
+      <div style={{margin: "50px"}}>
         <Card name={name} card={card} expiry={expiry} cvv={cvv} />
         <form>
           <label>Card Number</label>
