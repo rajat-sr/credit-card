@@ -1,0 +1,27 @@
+.App {
+  padding: 50px;
+}
+
+.form {
+  display: flex;
+  margin-top: -50px;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 50px;
+  padding-top: 100px;
+  width: 1000px;
+}
+
+.title {
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+
+.input {
+  padding: 10px;
+  font-size: 1.07rem;
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}

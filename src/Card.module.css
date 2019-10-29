@@ -1,7 +1,10 @@
 .card {
+  position: relative;
+  z-index: 100;
   font-family: 'Space Mono', monospace;
   width: 430px;
-  background-image: linear-gradient(to bottom right, #141320, #2bdeeb);
+  height: 247px;
+  background-image: linear-gradient(to bottom right, #2bdeeb, #141320);
   padding: 25px 15px;
   border-radius: 15px;
   color: white;

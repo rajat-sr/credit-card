@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from './Card';
+import classes from './App.module.css';
+import BackCard from './BackCard';
 
 class App extends React.Component {
   state = {
@@ -72,31 +74,43 @@ class App extends React.Component {
 
   render() {
     const { card, name, expiry, cvv } = this.state;
+    let cardType = 'visa';
+    if (card.charAt(0) === '5') {
+      cardType = 'mastercard';
+    }
+
     return (
-      <div style={{margin: "50px"}}>
-        <Card name={name} card={card} expiry={expiry} cvv={cvv} />
-        <form>
-          <label>Card Number</label>
+      <div className={classes.App}>
+        <div className={classes.horizontal}>
+          <Card name={name} card={card} expiry={expiry} cardType={cardType} />
+          <BackCard cvv={cvv} cardType={cardType} />
+        </div>
+        <form className={classes.form}>
+          <label className={classes.title}>Card Number</label>
           <input
-            type="input"
+            className={classes.input}
+            type="text"
             value={card}
             onChange={event => this.handleCardNumberInput(event.target.value)}
           />
-          <label>Card Holder Name</label>
+          <label className={classes.title}>Card Holder Name</label>
           <input
-            type="input"
+            className={classes.input}
+            type="text"
             value={name}
             onChange={event => this.handleCardHolderNameInput(event.target.value)}
           />
-          <label>Expiry Date</label>
+          <label className={classes.title}>Expiry Date</label>
           <input
-            type="input"
+            className={classes.input}
+            type="text"
             value={expiry}
             onChange={event => this.handleCardExpiryInput(event.target.value)}
           />
-          <label>CVV</label>
+          <label className={classes.title}>CVV</label>
           <input
-            type="input"
+            className={classes.input}
+            type="text"
             value={cvv}
             onChange={event => this.handleCvvInput(event.target.value)}
           />

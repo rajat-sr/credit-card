@@ -1,0 +1,34 @@
+.backcard {
+  z-index: 20;
+  margin-top: -260px;
+  margin-left: 100px;
+  padding: 25px 15px;
+}
+
+.magneticStrip {
+  margin-top: 20px;
+  height: 48px;
+  background-color: #303030;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.cvvStrip {
+  margin: 20px;
+  margin-bottom: 0;
+  background-color: #fff;
+  height: 30px;
+  color: #303030;
+  text-align: end;
+  padding: 0 10px;
+  font-style: italic;
+}
+
+.cvvText {
+  text-align: end;
+  margin: 5px 20px;
+}
+
+.cardType {
+  margin-top: 35px;
+}

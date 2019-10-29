@@ -9,7 +9,7 @@ class Card extends Component {
   }
 
   render() {
-    const { card, name, expiry, cvv } = this.props;
+    const { card, name, expiry, cardType } = this.props;
 
     let cardNumber = card.split('');
     let spaceCount = 0;
@@ -26,15 +26,15 @@ class Card extends Component {
       expiryDate = expiryNumbers.join('');
     }
 
-    let cardType = <Visa className={classes.cardType} />;
-    if (card.charAt(0) === '5') {
-      cardType = <Mastercard className={classes.cardType} />;
+    let cardLogo = <Visa className={classes.cardType} />;
+    if (cardType === 'mastercard') {
+      cardLogo = <Mastercard className={classes.cardType} />;
     }
 
     return (
       <div className={classes.card}>
         <div className={classes.cardTypeRow}>
-          {cardType}
+          {cardLogo}
           <img className={classes.chip} alt="chip" src="https://image.ibb.co/cZeFjx/little_square.png" />
         </div>
         <div className={classes.number}>
