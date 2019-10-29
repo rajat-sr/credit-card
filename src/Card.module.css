@@ -1,6 +1,6 @@
 .card {
   font-family: 'Space Mono', monospace;
-  height: 270px;
+  /* height: 270px; */
   width: 430px;
   background-image: linear-gradient(to bottom right, #141320, #2bdeeb);
   padding: 25px 15px;
@@ -15,9 +15,23 @@
   font-size: 2.08rem;
 }
 
+.cardTypeRow {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 25px;
+  justify-content: space-between;
+}
+
+.chip {
+  border-radius: 5px;
+  height: 35px;
+  display: block;
+  margin: auto 0;
+  
+}
+
 .cardType {
-  height: 48px;
-  margin-bottom: 40px;
+  height: 85px;
 }
 
 .title {
@@ -28,15 +42,20 @@
   font-weight: bold;
   overflow: hidden;
   flex-wrap: nowrap;
+  font-size: 1.2rem;
 }
 
 .expiry {
-  font-weight: bold;;
+  font-weight: bold;
+  width: 30px;
+  margin-right: 35px;
+  font-size: 1.2rem;
 }
 
 .horizontal {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0px 15px;
+  padding: 0px 20px;
+  /* margin-right: 15px; */
 }

@@ -4,12 +4,10 @@ import Card from './Card';
 class App extends React.Component {
   state = {
     card: '',
-    displayCardNumber: '',
     name: '',
     expiry: '',
     cvv: '',
     invalidExpiry: false,
-    cardProvider: ''
   };
 
   isInvalid(input) {
@@ -25,18 +23,11 @@ class App extends React.Component {
       return;
     }
 
-    let displayNumber = number.split('');
-    let spaceCount = 0;
-    for (let i = 4; i < number.length; i += 4) {
-      displayNumber.splice(i + spaceCount, 0, ' ');
-      spaceCount++;
-    }
-
-    this.setState({ card: number, displayCardNumber: displayNumber.join('') });
+    this.setState({ card: number });
   }
 
   handleCardHolderNameInput(name) {
-    this.setState({ name: name.toUpperCase() });
+    this.setState({ name: name });
   }
 
   handleCardExpiryInput(expiryDate) {
@@ -80,10 +71,10 @@ class App extends React.Component {
   }
 
   render() {
-    const { card, displayCardNumber, name, expiry, cvv } = this.state;
+    const { card, name, expiry, cvv } = this.state;
     return (
       <div>
-        <Card name={name} card={displayCardNumber} expiry={expiry} cvv={cvv} />
+        <Card name={name} card={card} expiry={expiry} cvv={cvv} />
         <form>
           <label>Card Number</label>
           <input
