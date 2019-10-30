@@ -81,7 +81,7 @@ class App extends React.Component {
 
     return (
       <div className={classes.App}>
-        <div className={classes.horizontal}>
+        <div>
           <Card name={name} card={card} expiry={expiry} cardType={cardType} />
           <BackCard cvv={cvv} cardType={cardType} />
         </div>
@@ -91,13 +91,15 @@ class App extends React.Component {
             className={classes.input}
             type="text"
             value={card}
+            placeholder="#### #### #### ####"
             onChange={event => this.handleCardNumberInput(event.target.value)}
           />
-          <label className={classes.title}>Card Holder Name</label>
+          <label className={classes.title}>Cardholder Name</label>
           <input
             className={classes.input}
             type="text"
             value={name}
+            placeholder="Full Name"
             onChange={event => this.handleCardHolderNameInput(event.target.value)}
           />
           <label className={classes.title}>Expiry Date</label>
@@ -105,6 +107,7 @@ class App extends React.Component {
             className={classes.input}
             type="text"
             value={expiry}
+            placeholder="MM/YY"
             onChange={event => this.handleCardExpiryInput(event.target.value)}
           />
           <label className={classes.title}>CVV</label>
@@ -112,6 +115,7 @@ class App extends React.Component {
             className={classes.input}
             type="text"
             value={cvv}
+            placeholder="***"
             onChange={event => this.handleCvvInput(event.target.value)}
           />
         </form>
