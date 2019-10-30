@@ -19,13 +19,24 @@
 
 .title {
   font-size: 0.8rem;
-  margin: 5px 0;
+  margin: 5px 3px;
+  color: #444;
 }
 
-.input {
+/* .input {
   padding: 10px;
   font-size: 1.07rem;
   margin-bottom: 20px;
   border: 0;
   border-bottom: 1px solid #ccc;
+} */
+
+.input {
+  padding: 10px 15px;
+  border: 1px solid #eee;
+  border-radius: 7px;
+  font-size: 1.07rem;
+  outline: none;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }
