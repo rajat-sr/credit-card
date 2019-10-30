@@ -19,13 +19,6 @@ class Card extends Component {
     }
     cardNumber = cardNumber.join('');
 
-    let expiryDate = expiry;
-    if (expiryDate.length > 2) {
-      const expiryNumbers = expiryDate.split('');
-      expiryNumbers.splice(2, 0, '/');
-      expiryDate = expiryNumbers.join('');
-    }
-
     let cardLogo = <Visa className={classes.cardType} />;
     if (cardType === 'mastercard') {
       cardLogo = <Mastercard className={classes.cardType} />;
@@ -50,7 +43,7 @@ class Card extends Component {
           <div>
             <div className={classes.title}>Expiry</div>
             <div className={classes.expiry}>
-              {this.isInvalid(expiry) ? <div>MM/YY</div> : expiryDate}
+              {this.isInvalid(expiry) ? <div>MM/YY</div> : expiry}
             </div>
           </div>
         </div>
