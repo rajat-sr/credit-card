@@ -11,13 +11,11 @@ class Card extends Component {
   render() {
     const { card, name, expiry, cardType } = this.props;
 
-    let cardNumber = card.split('');
-    let spaceCount = 0;
-    for (let i = 4; i < card.length; i += 4) {
-      cardNumber.splice(i + spaceCount, 0, ' ');
-      spaceCount++;
-    }
-    cardNumber = cardNumber.join('');
+    const hashes = '################';
+    const cardNumber = hashes.replace(new RegExp('#{' + card.length + '}'), card).split('');
+    cardNumber.splice(12, 0, ' ');
+    cardNumber.splice(8, 0, ' ');
+    cardNumber.splice(4, 0, ' ');
 
     let cardLogo = <Visa className={classes.cardType} />;
     if (cardType === 'mastercard') {
@@ -28,10 +26,18 @@ class Card extends Component {
       <div className={classes.card}>
         <div className={classes.cardTypeRow}>
           {cardLogo}
-          <img className={classes.chip} alt="chip" src="https://image.ibb.co/cZeFjx/little_square.png" />
+          <img
+            className={classes.chip}
+            alt="chip"
+            src="https://image.ibb.co/cZeFjx/little_square.png"
+          />
         </div>
         <div className={classes.number}>
-          {this.isInvalid(cardNumber) ? <div>#### #### #### ####</div> : cardNumber}
+          {cardNumber.map((number, index) => (
+            <div className={classes.individualNumber} key={index}>
+              {number}
+            </div>
+          ))}
         </div>
         <div className={classes.horizontal}>
           <div>
@@ -47,7 +53,6 @@ class Card extends Component {
             </div>
           </div>
         </div>
-        {/* <div>{this.isInvalid(cvv) ? <div>***</div> : cvv}</div> */}
       </div>
     );
   }
