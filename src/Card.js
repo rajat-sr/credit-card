@@ -22,6 +22,11 @@ class Card extends Component {
       cardLogo = <Mastercard className={classes.cardType} />;
     }
 
+    let expiryDate = 'MM/YY'
+    if (!this.isInvalid(expiry)) {
+      expiryDate = expiryDate.replace(new RegExp('.{' + expiry.length + '}'), expiry);
+    }
+
     return (
       <div className={classes.card}>
         <div className={classes.cardTypeRow}>
@@ -49,7 +54,7 @@ class Card extends Component {
           <div>
             <div className={classes.title}>Expiry</div>
             <div className={classes.expiry}>
-              {this.isInvalid(expiry) ? <div>MM/YY</div> : expiry}
+              {expiryDate}
             </div>
           </div>
         </div>
